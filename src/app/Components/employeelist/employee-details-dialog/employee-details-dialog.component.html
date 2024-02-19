@@ -1,0 +1,46 @@
+<h2 mat-dialog-title class="text-blue-700">
+  {{ data | employeePipe }}
+</h2>
+<mat-dialog-content>
+  <div class="grid grid-cols-2 gap-3">
+    <div class="bg-gray-100 p-4 rounded-md">
+      <p>First Name</p>
+      <span class="font-bold text-lg">{{ data.first_name }}</span>
+    </div>
+
+    <div class="bg-gray-100 p-4 rounded-md">
+      <p>Last Name</p>
+      <span class="font-bold text-lg">{{ data.last_name }}</span>
+    </div>
+
+    <div class="bg-gray-100 p-4 rounded-md">
+      <p>Department</p>
+      <span class="font-bold text-lg">{{ data.department_name }}</span>
+    </div>
+
+    <div class="bg-gray-100 p-4 rounded-md">
+      <p>Phone</p>
+      <span class="font-bold text-lg">{{ data.phone }}</span>
+    </div>
+
+    <div class="bg-gray-100 p-4 rounded-md">
+      <p>Address</p>
+      <p class="font-bold m-0 text-lg">{{ data.address }}</p>
+    </div>
+
+    <div class="bg-gray-100 p-4 rounded-md">
+      <p>Hire Date</p>
+      <p class="font-bold m-0 text-lg text-right">
+        {{ data.hire_date }}
+      </p>
+    </div>
+    <div class="bg-gray-100 p-4 rounded-md">
+      <p>Department:</p>
+      <span class="font-bold text-lg">{{ data.department_name }}</span>
+    </div>
+  </div>
+</mat-dialog-content>
+
+<mat-dialog-actions align="end">
+  <button mat-button mat-dialog-close>Close</button>
+</mat-dialog-actions>

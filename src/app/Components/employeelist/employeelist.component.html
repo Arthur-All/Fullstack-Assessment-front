@@ -1,0 +1,25 @@
+<mat-card class="px-0 rounded-lg mat-elevation-z3">
+  <mat-card-title class="px-4">
+    <h2 class="text-blue-700">Employees</h2>
+  </mat-card-title>
+  <mat-card-content>
+    <mat-list>
+      <ng-container *ngFor="let item of employees | async; last as isLast">
+        <mat-list-item class="hover:bg-gray-100 cursor-pointer">
+          <app-employeelist-item [employee]="item"></app-employeelist-item>
+        </mat-list-item>
+        <mat-divider *ngIf="!isLast"></mat-divider>
+      </ng-container>
+    </mat-list>
+  </mat-card-content>
+  <button
+    matTooltip="Opens froms for Employee creation"
+    class="btn-register"
+    type="submit"
+    mat-raised-button
+    color="primary"
+    (click)="showCreateEmployee()"
+  >
+    Create an Employee
+  </button>
+</mat-card>
