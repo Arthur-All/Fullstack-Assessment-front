@@ -18,7 +18,9 @@ export class EmplooyeeListService {
   }
 
   getEmplooyeeList() {
-    return this.http.get<EmployeeModel[]>(`${environment.apiUrl}/GET/All`);
+    return this.http.get<EmployeeModel[]>(
+      `${environment.apiUrl}/GET/Employee/All`
+    );
   }
 
   updateEmplooyee(employee: EmployeeModel) {
@@ -30,7 +32,7 @@ export class EmplooyeeListService {
   }
   updateEmplooyeeDepartment(employee: EmployeeModel) {
     return this.http.put<EmployeeModel[]>(
-      `${environment.apiUrl}/PUT//Department`,
+      `${environment.apiUrl}/PUT/Department`,
       employee,
       {}
     );
@@ -49,7 +51,7 @@ export class EmplooyeeListService {
     });
 
     return this.http.post<EmployeeModel[]>(
-      '{environment.apiUrl}?entityName=employee',
+      `${environment.apiUrl}?entityName=employee`,
       employee,
       { headers: headers }
     );
@@ -58,7 +60,7 @@ export class EmplooyeeListService {
   deleteEmplooyee(employee: EmployeeModel) {
     console.log(employee.id);
     return this.http.delete<EmployeeModel[]>(
-      `{environment.apiUrl}?entityName=employee&id=${employee.id}`,
+      `${environment.apiUrl}?entityName=employee&id=${employee.id}`,
       {}
     );
   }
